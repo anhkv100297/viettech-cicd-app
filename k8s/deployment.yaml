@@ -17,6 +17,9 @@ spec:
         app: viettech-app
 
     spec:
+      imagePullSecrets:
+        - name: ecr-secret
+
       containers:
         - name: viettech-app
           image: 042134552922.dkr.ecr.ap-southeast-1.amazonaws.com/viettech-app:latest
