@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner - Kim Việt Anh</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#F9F8F6',
+                            card: '#FFFFFF',
+                            dark: '#121212',
+                            muted: '#737373',
+                            accent: '#C5A880'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-brand-bg text-brand-dark font-sans selection:bg-brand-accent selection:text-white antialiased overflow-x-hidden">
+
+    <!-- Custom Cursor Customization -->
+    <div id="cursor-dot" class="fixed w-2 h-2 bg-brand-dark rounded-full pointer-events-none z-50 transition-transform duration-75 ease-out -translate-x-1/2 -translate-y-1/2 hidden md:block"></div>
+    <div id="cursor-outline" class="fixed w-10 h-10 border border-brand-dark/30 rounded-full pointer-events-none z-50 transition-all duration-300 ease-out -translate-x-1/2 -translate-y-1/2 hidden md:block"></div>
+
+    <!-- Navigation Bar -->
+    <header id="navbar" class="fixed top-0 left-0 w-full z-40 transition-all duration-500 py-6 px-8 md:px-16 flex justify-between items-center bg-brand-bg/80 backdrop-blur-md">
+        <a href="#" class="text-2xl font-serif tracking-wider font-semibold text-brand-dark group">
+            KTS<span class="text-brand-accent group-hover:opacity-80 transition-opacity">.</span>STUDIO
+        </a>
+
+        <nav class="hidden md:flex space-x-10 text-sm tracking-widest uppercase font-medium text-brand-muted">
+            <a href="#about" class="hover:text-brand-dark transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-brand-dark hover:after:w-full after:transition-all">Về Chúng Tôi</a>
+            <a href="#projects" class="hover:text-brand-dark transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-brand-dark hover:after:w-full after:transition-all">Dự Án</a>
+            <a href="#philosophy" class="hover:text-brand-dark transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-brand-dark hover:after:w-full after:transition-all">Triết Lý</a>
+            <a href="#contact" class="hover:text-brand-dark transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-brand-dark hover:after:w-full after:transition-all">Liên Hệ</a>
+        </nav>
+
+        <a href="#contact" class="hidden md:inline-flex items-center px-6 py-2.5 border border-brand-dark text-xs uppercase tracking-widest font-semibold hover:bg-brand-dark hover:text-white transition-all duration-300">
+            Tư Vấn Thiết Kế
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="md:hidden text-brand-dark focus:outline-none">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen pt-32 pb-20 px-8 md:px-16 flex flex-col justify-between relative overflow-hidden">
+        <div class="max-w-5xl">
+            <p class="text-xs uppercase tracking-[0.3em] text-brand-accent font-semibold mb-6 reveal-up">
+                Architecture & Interior Design
+            </p>
+            <h1 class="text-4xl md:text-7xl font-serif font-light leading-tight tracking-tight text-brand-dark mb-8 reveal-up delay-100">
+                Tối giản không gian.<br/>
+                <span class="italic font-normal">Nâng tầm</span> trải nghiệm sống.
+            </h1>
+            <p class="text-base md:text-lg text-brand-muted font-light max-w-xl leading-relaxed mb-10 reveal-up delay-200">
+                Chúng tôi sáng tạo những công trình kiến trúc và không gian nội thất tối giản, nơi ánh sáng, vật liệu tự nhiên và tỷ lệ đạt tới sự hài hòa hoàn hảo.
+            </p>
+            <div class="reveal-up delay-300">
+                <a href="#projects" class="inline-flex items-center space-x-4 group text-sm tracking-widest uppercase font-semibold">
+                    <span>Khám phá các dự án</span>
+                    <span class="w-12 h-[1px] bg-brand-dark group-hover:w-20 transition-all duration-300"></span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Hero Image Banner with Tilt Effect -->
+        <div class="mt-16 relative w-full h-[55vh] overflow-hidden rounded-sm group reveal-up delay-400">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000&auto=format&fit=crop" 
+                 alt="Minimalist Interior" 
+                 class="w-full h-full object-cover transform scale-105 group-hover:scale-100 transition-transform duration-1000 ease-out">
+            <div class="absolute inset-0 bg-black/10"></div>
+            <div class="absolute bottom-8 left-8 text-white">
+                <span class="text-xs uppercase tracking-widest opacity-80">Dự án nổi bật 2026</span>
+                <h3 class="text-xl font-serif font-light">Villa The Soft Horizon — Da Nang</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats & Intro Section -->
+    <section id="about" class="py-24 px-8 md:px-16 border-t border-black/5">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+            <div class="md:col-span-5 reveal-up">
+                <span class="text-xs uppercase tracking-[0.2em] text-brand-accent font-semibold block mb-4">Về Chúng Tôi</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-light leading-snug">
+                    Định hình phong cách sống hiện đại qua từng đường nét.
+                </h2>
+            </div>
+            <div class="md:col-span-7 space-y-6 text-brand-muted font-light leading-relaxed reveal-up delay-100">
+                <p>
+                    KTS Studio tin rằng sự tinh tế đích thực xuất phát từ việc loại bỏ những chi tiết thừa thãi. Mỗi không gian do chúng tôi kiến tạo đều lấy con người làm trung tâm, tối ưu hóa ánh sáng tự nhiên và sự lưu thông của không khí.
+                </p>
+                <div class="grid grid-cols-3 gap-8 pt-8 border-t border-black/5">
+                    <div>
+                        <span class="text-3xl md:text-4xl font-serif text-brand-dark block font-light counter" data-target="120">0</span>
+                        <span class="text-xs uppercase tracking-wider text-brand-muted mt-1 block">Dự án hoàn thành</span>
+                    </div>
+                    <div>
+                        <span class="text-3xl md:text-4xl font-serif text-brand-dark block font-light counter" data-target="15">0</span>
+                        <span class="text-xs uppercase tracking-wider text-brand-muted mt-1 block">Giải thưởng kiến trúc</span>
+                    </div>
+                    <div>
+                        <span class="text-3xl md:text-4xl font-serif text-brand-dark block font-light counter" data-target="98">0</span>
+                        <span class="text-xs uppercase tracking-wider text-brand-muted mt-1 block">% Hài lòng tuyệt đối</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Portfolio Section -->
+    <section id="projects" class="py-24 px-8 md:px-16 bg-white">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+            <div class="reveal-up">
+                <span class="text-xs uppercase tracking-[0.2em] text-brand-accent font-semibold block mb-3">Portfolio</span>
+                <h2 class="text-3xl md:text-5xl font-serif font-light">Các Dự Án Tiêu Biểu</h2>
+            </div>
+            <!-- Filter buttons -->
+            <div class="flex space-x-6 mt-6 md:mt-0 text-sm font-medium text-brand-muted reveal-up delay-100" id="project-filters">
+                <button data-filter="all" class="filter-btn active text-brand-dark underline decoration-2 underline-offset-8">Tất cả</button>
+                <button data-filter="architecture" class="filter-btn hover:text-brand-dark transition-colors">Kiến trúc</button>
+                <button data-filter="interior" class="filter-btn hover:text-brand-dark transition-colors">Nội thất</button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12" id="projects-grid">
+            <!-- Project Card 1 -->
+            <div class="project-card group cursor-pointer reveal-up" data-category="architecture">
+                <div class="overflow-hidden bg-brand-bg relative aspect-[4/3] mb-6">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop" 
+                         alt="Monochrome House" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                    <div class="absolute inset-0 bg-brand-dark/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="px-6 py-3 bg-white/90 text-brand-dark text-xs uppercase tracking-widest font-semibold backdrop-blur-sm">Xem chi tiết</span>
+                    </div>
+                </div>
+                <div class="flex justify-between items-baseline">
+                    <h3 class="text-xl font-serif font-medium group-hover:text-brand-accent transition-colors">The Monochrome House</h3>
+                    <span class="text-xs uppercase tracking-widest text-brand-muted">Kiến trúc / 2025</span>
+                </div>
+                <p class="text-sm text-brand-muted font-light mt-2">Thảo Điền, TP. Hồ Chí Minh</p>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="project-card group cursor-pointer reveal-up delay-100" data-category="interior">
+                <div class="overflow-hidden bg-brand-bg relative aspect-[4/3] mb-6">
+                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1200&auto=format&fit=crop" 
+                         alt="Zen Sanctuary Penthouse" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                    <div class="absolute inset-0 bg-brand-dark/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="px-6 py-3 bg-white/90 text-brand-dark text-xs uppercase tracking-widest font-semibold backdrop-blur-sm">Xem chi tiết</span>
+                    </div>
+                </div>
+                <div class="flex justify-between items-baseline">
+                    <h3 class="text-xl font-serif font-medium group-hover:text-brand-accent transition-colors">Zen Sanctuary Penthouse</h3>
+                    <span class="text-xs uppercase tracking-widest text-brand-muted">Nội thất / 2026</span>
+                </div>
+                <p class="text-sm text-brand-muted font-light mt-2">Tay Ho, Hà Nội</p>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="project-card group cursor-pointer reveal-up" data-category="interior">
+                <div class="overflow-hidden bg-brand-bg relative aspect-[4/3] mb-6">
+                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1200&auto=format&fit=crop" 
+                         alt="Wabi Sabi Apartment" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                    <div class="absolute inset-0 bg-brand-dark/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="px-6 py-3 bg-white/90 text-brand-dark text-xs uppercase tracking-widest font-semibold backdrop-blur-sm">Xem chi tiết</span>
+                    </div>
+                </div>
+                <div class="flex justify-between items-baseline">
+                    <h3 class="text-xl font-serif font-medium group-hover:text-brand-accent transition-colors">Wabi Sabi Urban Apartment</h3>
+                    <span class="text-xs uppercase tracking-widest text-brand-muted">Nội thất / 2025</span>
+                </div>
+                <p class="text-sm text-brand-muted font-light mt-2">District 1, TP. Hồ Chí Minh</p>
+            </div>
+
+            <!-- Project Card 4 -->
+            <div class="project-card group cursor-pointer reveal-up delay-100" data-category="architecture">
+                <div class="overflow-hidden bg-brand-bg relative aspect-[4/3] mb-6">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200&auto=format&fit=crop" 
+                         alt="Pine Hill Villa" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                    <div class="absolute inset-0 bg-brand-dark/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="px-6 py-3 bg-white/90 text-brand-dark text-xs uppercase tracking-widest font-semibold backdrop-blur-sm">Xem chi tiết</span>
+                    </div>
+                </div>
+                <div class="flex justify-between items-baseline">
+                    <h3 class="text-xl font-serif font-medium group-hover:text-brand-accent transition-colors">Pine Hill Glass Villa</h3>
+                    <span class="text-xs uppercase tracking-widest text-brand-muted">Kiến trúc / 2026</span>
+                </div>
+                <p class="text-sm text-brand-muted font-light mt-2">Đà Lạt, Lâm Đồng</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="philosophy" class="py-24 px-8 md:px-16 bg-brand-dark text-white relative">
+        <div class="max-w-4xl mx-auto text-center space-y-8">
+            <span class="text-xs uppercase tracking-[0.3em] text-brand-accent font-semibold block reveal-up">Triết Lý Thiết Kế</span>
+            <blockquote class="text-2xl md:text-4xl font-serif font-light leading-relaxed italic reveal-up delay-100">
+                "Simplicity is about subtracting the obvious and adding the meaningful."
+            </blockquote>
+            <p class="text-sm md:text-base text-gray-400 font-light max-w-2xl mx-auto leading-relaxed reveal-up delay-200">
+                Chúng tôi không chỉ kiến tạo những bức tường hay nội thất, chúng tôi tạo nên bầu không khí. Sự tĩnh lặng trong không gian giúp tâm trí nghỉ ngơi và tìm lại năng lượng cân bằng.
+            </p>
+        </div>
+    </section>
+
+    <!-- Interactive Interactive Contact Form -->
+    <section id="contact" class="py-24 px-8 md:px-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div class="reveal-up">
+                <span class="text-xs uppercase tracking-[0.2em] text-brand-accent font-semibold block mb-3">Liên Hệ</span>
+                <h2 class="text-3xl md:text-5xl font-serif font-light mb-6">Bắt đầu không gian mơ ước của bạn</h2>
+                <p class="text-brand-muted font-light mb-8 max-w-md">
+                    Hãy chia sẻ với chúng tôi về ý tưởng, diện tích cũng như mong muốn của bạn. KTS Studio sẽ phản hồi trong vòng 24 giờ.
+                </p>
+                <div class="space-y-4 text-sm font-light">
+                    <div class="flex items-center space-x-4">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-brand-accent"></i>
+                        <span>102 Nguyễn Trãi, Quận 1, TP. Hồ Chí Minh</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <i data-lucide="mail" class="w-5 h-5 text-brand-accent"></i>
+                        <span>contact@kts-studio.vn</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <i data-lucide="phone" class="w-5 h-5 text-brand-accent"></i>
+                        <span>+84 (0) 90 123 4567</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <form id="contact-form" class="space-y-6 reveal-up delay-100">
+                <div>
+                    <label class="block text-xs uppercase tracking-widest text-brand-muted mb-2">Họ & Tên</label>
+                    <input type="text" required class="w-full bg-transparent border-b border-black/20 py-3 focus:outline-none focus:border-brand-dark transition-colors font-light text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase tracking-widest text-brand-muted mb-2">Email</label>
+                    <input type="email" required class="w-full bg-transparent border-b border-black/20 py-3 focus:outline-none focus:border-brand-dark transition-colors font-light text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase tracking-widest text-brand-muted mb-2">Loại hình dự án</label>
+                    <select class="w-full bg-transparent border-b border-black/20 py-3 focus:outline-none focus:border-brand-dark transition-colors font-light text-sm text-brand-dark">
+                        <option value="interior">Thiết kế Nội Thất</option>
+                        <option value="architecture">Thiết kế Kiến Trúc</option>
+                        <option value="full">Thi công Trọn Gói</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs uppercase tracking-widest text-brand-muted mb-2">Lời nhắn</label>
+                    <textarea rows="4" class="w-full bg-transparent border-b border-black/20 py-3 focus:outline-none focus:border-brand-dark transition-colors font-light text-sm resize-none"></textarea>
+                </div>
+                <button type="submit" class="w-full py-4 bg-brand-dark text-white text-xs uppercase tracking-widest font-semibold hover:bg-brand-accent transition-colors duration-300">
+                    Gửi Yêu Cầu Tư Vấn
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-8 md:px-16 border-t border-black/5 text-xs text-brand-muted flex flex-col md:flex-row justify-between items-center gap-4">
+        <p>© 2026 KTS Studio. All rights reserved.</p>
+        <p class="font-mono">Designed for Minimalist Architecture</p>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

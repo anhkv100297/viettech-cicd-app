@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: viettech-app
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: viettech-app
+
+  template:
+    metadata:
+      labels:
+        app: viettech-app
+
+    spec:
+      containers:
+        - name: viettech-app
+          image: 042134552922.dkr.ecr.ap-southeast-1.amazonaws.com/viettech-app:latest
+
+          ports:
+            - containerPort: 80
